@@ -1,0 +1,193 @@
+import { StyleSheet } from "react-native";
+
+/**------------------------Style BookInFo ------------------------------------*/
+const styleBookInfo = StyleSheet.create({
+  commenting: {
+    display: "none",
+  },
+  comment_input: {
+    height: 40,
+    margin: 12,
+    borderBottomWidth: 2,
+    padding: 10,
+    width: "80%",
+  },
+  avatarImage: {
+    height: "100%",
+    width: "100%",
+    resizeMode: "contain",
+    borderRadius: 100,
+  },
+  avatar: {
+    borderRadius: 100,
+    // borderWidth: 2,
+    height: 40,
+    width: 40,
+  },
+  commentContent: {
+    // borderWidth: 2,
+    height: "40%",
+    display: "flex",
+    flexDirection: "row",
+    // backgroundColor: "red",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+  comment_title: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  comment: {
+    padding: "2%",
+    height: "18%",
+    backgroundColor: "rgb(225, 237, 255)",
+    // borderWidth: 2,
+  },
+  comment_commenting: {
+    padding: "2%",
+    height: "25%",
+    backgroundColor: "rgb(225, 237, 255)",
+    alignContent: "center",
+  },
+  buttonListen_title: { textAlign: "center", color: "#fff" },
+  buttonListen: {
+    // borderWidth: 2,
+    width: "40%",
+    padding: 5,
+    borderRadius: 15,
+    backgroundColor: "rgb(32, 35, 42)",
+  },
+  buttonRead_title: { textAlign: "center", color: "#fff" },
+  buttonRead: {
+    // borderWidth: 2,
+    width: "40%",
+    padding: 5,
+    borderRadius: 15,
+    backgroundColor: "#2196F3",
+  },
+  buttonContainer: {
+    // borderWidth: 2,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    paddingLeft: "10%",
+    paddingRight: "10%",
+  },
+  starRate: {
+    display: "flex",
+    flexDirection: "row",
+    paddingLeft: "5%",
+    paddingTop: "0%",
+    paddingBottom: "2%",
+    // borderWidth: 2,
+  },
+  sumaryStory: { fontSize: 10 },
+  athor: {
+    fontWeight: "bold",
+    marginTop: 5,
+    marginBottom: 5,
+    fontSize: 12,
+  },
+  sumaryBook: {
+    // borderWidth: 2,
+    paddingLeft: "5%",
+    paddingRight: "5%",
+    height: "50%",
+  },
+  bodyContent_title: {
+    fontSize: 17,
+    fontWeight: "bold",
+    width: "60%",
+  },
+  bodyContent_head: {
+    // borderWidth: 2,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    // padding: 5,
+    marginTop: "5%",
+    width: "100%",
+    height: "10%",
+  },
+  bodyContent: {
+    width: "100%",
+    height: "56%",
+    // borderWidth: 2,
+    padding: "1%",
+    marginTop: "5%",
+    borderTopLeftRadius: 50,
+    borderTopRightRadius: 50,
+    backgroundColor: "rgb(225, 237, 255)",
+  },
+  bodyContent_commeting: {
+    display: "none",
+  },
+  body_image: {
+    height: "100%",
+    aspectRatio: 333 / 500,
+    borderWidth: 2,
+  },
+  body_head: {
+    height: "40%",
+    // borderWidth: 10,
+    alignItems: "center",
+    display: "flex",
+  },
+  body_head_commenting: {
+    height: "100%",
+    alignItems: "center",
+    display: "flex",
+  },
+  body: {
+    // borderWidth: 5,
+    height: "70%",
+    width: "100%",
+    backgroundColor: "rgb(99, 116, 198)",
+    // backgroundColor: "rgb(0, 0 ,0)",
+  },
+  body_commenting: {
+    height: "50%",
+    width: "100%",
+    // height: "70%",
+    backgroundColor: "rgb(99, 116, 198)",
+  },
+  header_title: {
+    width: "90%",
+    // textAlign: "center",
+    paddingLeft: "22%",
+    alignSelf: "center",
+    fontWeight: "bold",
+    fontSize: 20,
+    color: "#fff",
+  },
+  backButton: {
+    width: "12%",
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  header: {
+    // borderWidth: 2,
+    display: "flex",
+    flexDirection: "row",
+    height: "8%",
+    backgroundColor: "rgb(99, 116, 198)",
+  },
+  header_commenting: {
+    display: "flex",
+    flexDirection: "row",
+    height: "15%",
+    backgroundColor: "rgb(99, 116, 198)",
+  },
+  container: {
+    borderWidth: 2,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgb(225, 237, 255)",
+  },
+});
+
+/**------------------------Style Book Comment --------------------------------*/
+
+export { styleBookInfo };

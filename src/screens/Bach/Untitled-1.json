@@ -1,0 +1,43 @@
+
+{
+  "author": "Mari Tamagawa",
+  "backgroundColor": "rgba(240,240,232,0.9)",
+  "bookCover": {
+    "uri": "https://www.dtv-ebook.com/images/Cover/34308532124_7eceb70b5c_o.jpg"
+  },
+  "bookName": "Mặc kệ thiên hạ sống như người nhật",
+  "completion": "75%",
+  "description": "Jude never thought she’d be leaving her beloved older brother and father behind, all the way across the ocean in Syria. But when things in her hometown start becoming volatile, Jude and her mother are sent to live in Cincinnati with relatives. At first, everything in America seems too fast and too loud. The American movies that Jude has always loved haven’t quite prepared her for starting school in the US—and her new label of 'Middle Eastern,' an identity she’s never known before. But this life also brings unexpected surprises—there are new friends, a whole new family, and a school musical that Jude might just try out for. Maybe America, too, is a place where Jude can be seen as she really is.",
+  "genre": [
+    "Tiểu thuyết"
+  ],
+  "id": 4,
+  "language": "Vn",
+  "lastRead": "3d 5h",
+  "navTintColor": "#FFF",
+  "pageNo": 341,
+  "rating": 4.5,
+  "readed": "12k"
+},
+
+{
+  "mybook": {
+    "author": "Dale Carnegie", "backgroundColor": "rgba(240,240,232,0.9)", "bookAudio": "https://drive.google.com/u/3/uc?id=1JP-EhyRRWjYX-e11mPNlrs-BS5chEL72&export=download", 
+    "bookCover": {
+      "uri": "https://sachhoc.com/image/cache/catalog/Khoinghiep/Dac-nhan-tam-500x554.jpg"
+      }, 
+      "bookName": "Đắc nhân tâm", 
+      "bookUri": "https://docs.google.com/uc?export=download&id=1siktRiZKgIVry_toIQraLXNaBEYLjYWh", 
+      "categoryId": 0, 
+      "completion": "75%", 
+      "description": "Jude never thought she’d be leaving her beloved older brother and father behind, all the way across the ocean in Syria. But when things in her hometown start becoming volatile, Jude and her mother are sent to live in Cincinnati with relatives. At first, everything in America seems too fast and too loud. The American movies that Jude has always loved haven’t quite prepared her for starting school in the US—and her new label of 'Middle Eastern,' an identity she’s never known before. But this life also brings unexpected surprises—there are new friends, a whole new family, and a school musical that Jude might just try out for. Maybe America, too, is a place where Jude can be seen as she really is.", "genre": ["Tiểu thuyết"], 
+      "id": 0, 
+      "language": "Vn", 
+      "lastRead": "3d 5h", 
+      "navTintColor": "#FFF", 
+      "pageNo": 341, 
+      "rating": 4.5, 
+      "readed": "12k"
+  }, 
+  "screen": "BookInfo"
+}
