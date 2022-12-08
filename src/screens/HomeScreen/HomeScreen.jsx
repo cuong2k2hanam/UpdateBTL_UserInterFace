@@ -7,14 +7,11 @@ import {
   ScrollView,
 } from "react-native";
 import React from "react";
+import { LinearGradient } from "expo-linear-gradient";
 
-import HeaderHome from "./HeaderHome/HeaderHome";
-import BookItem from "../../components/Book/BookItem";
 import Home from "../Bach/Home";
 
-import { books } from "../../book";
-import { book } from "../../data";
-
+import { COLORS } from "../../../constants";
 import {
   useFonts,
   Roboto_400Regular,
@@ -40,34 +37,12 @@ export default function HomeScreen({ navigation }) {
   }
 
   return (
-    // <View style={styles.container}>
-    //   <HeaderHome image={image} style={styles.headerHome} />
-    //   <View style={styles.bodyHome}>
-    //     <Text>HomeScreen</Text>
-    //     <ScrollView>
-    //       {books.map((book, index) => {
-    //         return (
-    //           <BookItem
-    //             key={index}
-    //             navigation={navigation}
-    //             image={book.bookImg}
-    //             nameBook={book.bookName}
-    //             onPress={
-    //              () =>
-    //                 navigation.navigate("BookNavigation", {
-    //                   screen: "BookInfo",
-    //                   mybook: book,
-    //                 } )
-    //               // navigation.navigate("BookInfo", { mybook: book })
-    //               // navigation.navigate("BookNavigation", { mybook: book })
-    //             }
-    //           />
-    //         );
-    //       })}
-    //     </ScrollView>
-    //   </View>
-    // </View>
-    <Home navigation={navigation} />
+    <LinearGradient
+      colors={COLORS.linerGradientPrimary}
+      style={styles.container}
+    >
+      <Home navigation={navigation} />
+    </LinearGradient>
   );
 }
 
@@ -75,7 +50,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    borderWidth: 2,
+    // borderWidth: 2,
   },
   headerHome: {
     // height: "20%",

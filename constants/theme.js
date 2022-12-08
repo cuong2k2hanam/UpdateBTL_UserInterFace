@@ -5,6 +5,7 @@ export const COLORS = {
   // base colors
   primary: "#F96D41",
   secondary: "#25282F",
+  secondPrimary: "#E1EDFF",
 
   // colors
   black: "#1E1B26",
@@ -16,11 +17,15 @@ export const COLORS = {
   gray: "#2D3038",
   gray1: "#282C35",
   darkRed: "#31262F",
-  lightRed: "#C5505E",
+  lightRed: "#eb0e0e",
   darkBlue: "#22273B",
-  lightBlue: "#424BAF",
+  lightBlue: "#2867fa",
   darkGreen: "#213432",
-  lightGreen: "#31Ad66",
+  lightGreen: "#04d435",
+  linerGradientPrimary: ["#4559BD", "rgba(69, 89, 189, 0.7)"],
+  transparent: "transparent",
+  lightYellow: "#ffff17",
+  darkYellow: "#3d3d22",
 };
 
 export const SIZES = {

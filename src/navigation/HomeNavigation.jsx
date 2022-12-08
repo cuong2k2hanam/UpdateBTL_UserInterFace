@@ -7,6 +7,7 @@ import HomeScreen from "../screens/HomeScreen/HomeScreen";
 import BookScreen from "../screens/BookScreen/BookScreen";
 import BookNavigation from "./BookNavigation";
 import UserScreen from "../screens/UserScreen/UserScreen";
+import UserNavigation from "./UserNavigation";
 
 import { theme } from "../theme";
 
@@ -58,7 +59,7 @@ export default function HomeNavigation() {
       />
       <Tab.Screen
         name="UserScreen"
-        component={UserScreen}
+        component={UserNavigation}
         options={{
           tabBarLabel: "Cài đặt",
           // tabBarIcon: ({ color }) => (

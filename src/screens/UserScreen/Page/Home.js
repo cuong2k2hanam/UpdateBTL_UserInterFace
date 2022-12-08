@@ -10,7 +10,7 @@ import {
   Pressable,
 } from "react-native";
 import { Avatar, Button, Icon, LinearProgress } from "react-native-elements";
-import LinearGradient from "react-native-linear-gradient";
+import { LinearGradient } from "expo-linear-gradient";
 
 import ViewBook from "./ViewBook";
 
@@ -18,42 +18,44 @@ export default function Home() {
   const [isFollow, setIsFollow] = useState(false);
   return (
     <ScrollView style={styles.container}>
-      <View style={[styles.rowDirection, styles.profile]}>
-        <Avatar
-          size={132}
-          rounded
-          source={{
-            uri: "https://i.pinimg.com/564x/38/df/03/38df03ae9475b6d00523cf716181e1a4.jpg",
-          }}
-        />
-        <View style={styles.storyAuthor}>
-          <Text style={styles.h1}>Name_Author</Text>
-          <Text>Story Author</Text>
+      <LinearGradient colors={["#4559BD", "transparent"]}>
+        <View style={[styles.rowDirection, styles.profile]}>
+          <Avatar
+            size={132}
+            rounded
+            source={{
+              uri: "https://i.pinimg.com/564x/38/df/03/38df03ae9475b6d00523cf716181e1a4.jpg",
+            }}
+          />
+          <View style={styles.storyAuthor}>
+            <Text style={styles.h1}>Name_Author</Text>
+            <Text>Story Author</Text>
+          </View>
         </View>
-      </View>
 
-      <View style={[styles.center, styles.p12]}>
-        {/* <TouchableHighlight style={styles.follow} onPress={() => { }}> */}
-        <Pressable
-          title="Press me"
-          style={[styles.rowDirection, styles.follow]}
-          onClick={() => setIsFollow(!isFollow)}
-        >
-          {isFollow ? (
-            <Icon name="heart" type="font-awesome" color="#f50" />
-          ) : (
-            <Icon name="heart-o" type="font-awesome" color="#f50" />
-          )}
+        <View style={[styles.center, styles.p12]}>
+          {/* <TouchableHighlight style={styles.follow} onPress={() => { }}> */}
+          <Pressable
+            title="Press me"
+            style={[styles.rowDirection, styles.follow]}
+            onClick={() => setIsFollow(!isFollow)}
+          >
+            {isFollow ? (
+              <Icon name="heart" type="font-awesome" color="#f50" />
+            ) : (
+              <Icon name="heart-o" type="font-awesome" color="#f50" />
+            )}
 
-          <Text style={[styles.h1, styles.m12]}>Theo dõi</Text>
-        </Pressable>
-        {/* </TouchableHighlight> */}
-      </View>
+            <Text style={[styles.h1, styles.m12]}>Theo dõi</Text>
+          </Pressable>
+          {/* </TouchableHighlight> */}
+        </View>
 
-      <View style={styles.containerBook}>
-        <Text style={styles.containerTitle}>Những tựa sách của tác giả</Text>
-        <ViewBook />
-      </View>
+        <View style={styles.containerBook}>
+          <Text style={styles.containerTitle}>Những tựa sách của tác giả</Text>
+          <ViewBook />
+        </View>
+      </LinearGradient>
     </ScrollView>
     // </View >
   );

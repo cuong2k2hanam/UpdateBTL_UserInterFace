@@ -1,19 +1,22 @@
 import { View, Text, ScrollView, StyleSheet } from "react-native";
 import React from "react";
 
-// import Home from "./Page/Home";
+import Home from "./Page/Home";
 // import Home from "./Page/HomeTest";
 // import Popup from "./Page/Modal";
 // import Report from "./Page/Report";
 // import Report from "./Page/SuggestFeature";
+import UserInfo from "./UserInfo/UserInfo";
+import SetUserInfo from "./SetUserInfo/SetUserInfo";
+
 import { theme } from "../../theme";
 
-import Home from "../Bach/Home";
+// import Home from "../Bach/Home";
 
 export default function UserScreen() {
   return (
     <View style={styles.container}>
-      <Home />
+      <SetUserInfo style={styles.contain} />
     </View>
   );
 }
@@ -21,6 +24,9 @@ export default function UserScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: theme.colors.primary,
+    // backgroundColor: "red",
+  },
+  contain: {
+    flex: 1,
   },
 });

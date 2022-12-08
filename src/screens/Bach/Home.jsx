@@ -23,7 +23,8 @@ const LineDivider = () => {
         style={{
           flex: 1,
           // borderLeftColor: COLORS.lightGray,
-          borderLeftColor: theme.colors.primary,
+          // borderLeftColor: theme.colors.primary,
+          borderLeftColor: COLORS.transparent,
           borderLeftWidth: 1,
         }}
       ></View>
@@ -436,7 +437,7 @@ const Home = ({ navigation }) => {
               style={{
                 ...FONTS.body3,
                 // color: COLORS.lightGray,
-                color: "#91a4fa",
+                color: "COLORS.darkBlue",
                 alignSelf: "flex-start",
                 textDecorationLine: "underline",
               }}
@@ -477,7 +478,7 @@ const Home = ({ navigation }) => {
               style={{
                 ...FONTS.h2,
                 // color: COLORS.lightGray,
-                color: "#91a4fa",
+                color: "COLORS.darkBlue",
               }}
             >
               {item.categoryName}
@@ -549,7 +550,7 @@ const Home = ({ navigation }) => {
                   style={{
                     ...FONTS.h3,
                     // color: COLORS.lightGray,
-                    color: "#91a4fa",
+                    color: "COLORS.darkBlue",
                   }}
                 >
                   {item.author}
@@ -565,14 +566,14 @@ const Home = ({ navigation }) => {
                     width: 20,
                     height: 20,
                     // tintColor: COLORS.lightGray,
-                    tintColor: "#91a4fa",
+                    tintColor: "COLORS.darkBlue",
                   }}
                 />
                 <Text
                   style={{
                     ...FONTS.body4,
                     // color: COLORS.lightGray,
-                    color: "#91a4fa",
+                    color: "COLORS.darkBlue",
                     paddingHorizontal: SIZES.radius,
                   }}
                 >
@@ -586,14 +587,14 @@ const Home = ({ navigation }) => {
                     width: 20,
                     height: 20,
                     // tintColor: COLORS.lightGray,
-                    tintColor: "#91a4fa",
+                    tintColor: "COLORS.darkBlue",
                   }}
                 />
                 <Text
                   style={{
                     ...FONTS.body4,
                     // color: COLORS.lightGray,
-                    color: "#91a4fa",
+                    color: "COLORS.darkBlue",
                     paddingHorizontal: SIZES.radius,
                   }}
                 >
@@ -602,8 +603,8 @@ const Home = ({ navigation }) => {
               </View>
 
               {/* Genre */}
-              {/* <View style={{ flexDirection: "row", marginTop: SIZES.base }}>
-                {item.genre.includes("Phiêu lưu") && (
+              <View style={{ flexDirection: "row", marginTop: SIZES.base }}>
+                {item.genre.includes("Tiểu thuyết") && (
                   <View
                     style={{
                       justifyContent: "center",
@@ -616,11 +617,11 @@ const Home = ({ navigation }) => {
                     }}
                   >
                     <Text style={{ ...FONTS.body3, color: COLORS.lightGreen }}>
-                      Phiêu lưu
+                      Tiểu thuyết
                     </Text>
                   </View>
                 )}
-                {item.genre.includes("Lãng mạn") && (
+                {item.genre.includes("Thiếu nhi") && (
                   <View
                     style={{
                       justifyContent: "center",
@@ -633,11 +634,28 @@ const Home = ({ navigation }) => {
                     }}
                   >
                     <Text style={{ ...FONTS.body3, color: COLORS.lightRed }}>
-                      Lãng mạn
+                      Thiếu nhi
                     </Text>
                   </View>
                 )}
-                {item.genre.includes("Drama") && (
+                {item.genre.includes("Hài hước") && (
+                  <View
+                    style={{
+                      justifyContent: "center",
+                      alignItems: "center",
+                      padding: SIZES.base,
+                      marginRight: SIZES.base,
+                      backgroundColor: COLORS.darkYellow,
+                      height: 40,
+                      borderRadius: SIZES.radius,
+                    }}
+                  >
+                    <Text style={{ ...FONTS.body3, color: COLORS.lightYellow }}>
+                      Hài hước
+                    </Text>
+                  </View>
+                )}
+                {item.genre.includes("Kỹ năng sống") && (
                   <View
                     style={{
                       justifyContent: "center",
@@ -650,11 +668,11 @@ const Home = ({ navigation }) => {
                     }}
                   >
                     <Text style={{ ...FONTS.body3, color: COLORS.lightBlue }}>
-                      Drama
+                      Kỹ năng sống
                     </Text>
                   </View>
                 )}
-              </View> */}
+              </View>
             </View>
           </TouchableOpacity>
 
@@ -670,7 +688,7 @@ const Home = ({ navigation }) => {
                 width: 25,
                 height: 25,
                 // tintColor: COLORS.lightGray,
-                tintColor: "#91a4fa",
+                tintColor: "COLORS.darkBlue",
               }}
             />
           </TouchableOpacity>
@@ -729,7 +747,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // backgroundColor: COLORS.darkBlue,
-    backgroundColor: theme.colors.primary,
+    // backgroundColor: theme.colors.primary,
+    backgroundColor: COLORS.transparent,
   },
   test: {
     // fontFamily: ""
