@@ -90,7 +90,7 @@ export default function SetContent({ style, user }) {
             value={phone}
             onChange={setPhone}
           /> */}
-          <Text style={styles.titleItem}>Email</Text>
+          <Text style={styles.titleItem}>Số điện thoại</Text>
           <TextInput
             style={styles.content}
             keyboardType="phone-pad"
@@ -149,9 +149,13 @@ const styles = StyleSheet.create({
   infor: {
     flex: 5,
     padding: 15,
+    width: "100%",
+    backgroundColor: COLORS.secondPrimary,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
   },
   inforItem: {
-    flexDirection: "row",
+    // flexDirection: "row",
     // borderWidth: 2,
     width: "100%",
     alignItems: "center",
@@ -159,23 +163,26 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   titleItem: {
-    flex: 1,
+    // flex: 1,
     alignSelf: "center",
     fontWeight: "bold",
     marginLeft: 20,
+    width: "100%",
+    marginBottom: 5,
   },
   content: {
-    flex: 4,
+    // flex: 2,
     justifyContent: "center",
     backgroundColor: COLORS.white,
     padding: 5,
     paddingHorizontal: 20,
     borderRadius: 50,
+    width: "100%",
   },
   submit: {
-    width: "80%",
+    width: "100%",
     backgroundColor: COLORS.lightBlue,
     padding: 10,
-    borderRadius: 20,
+    // borderRadius: 20,
   },
 });

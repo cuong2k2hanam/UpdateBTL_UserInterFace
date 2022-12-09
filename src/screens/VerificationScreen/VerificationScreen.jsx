@@ -17,7 +17,11 @@ export default function VerificationScreen({ navigation }) {
       </View>
       <View style={authStyles.buttonContainer}>
         <AppButton
-          onPress={() => navigation.navigate("HomeNavigator")}
+          onPress={() =>
+            navigation.navigate("HomeNavigator", {
+              screen: "HomeScreen",
+            })
+          }
           color={theme.colors.primary}
           title="Kiểm tra"
         />

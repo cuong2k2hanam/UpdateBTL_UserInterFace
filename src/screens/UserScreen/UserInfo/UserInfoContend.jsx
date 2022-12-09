@@ -17,7 +17,7 @@ export default function UserInfoContend({ user, style }) {
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 2,
+    // borderWidth: 2,
   },
   userAvatar: {
     flex: 1,

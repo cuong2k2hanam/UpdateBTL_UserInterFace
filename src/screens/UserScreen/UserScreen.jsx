@@ -1,4 +1,10 @@
-import { View, Text, ScrollView, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
 
 import Home from "./Page/Home";
@@ -16,7 +22,7 @@ import { theme } from "../../theme";
 export default function UserScreen() {
   return (
     <View style={styles.container}>
-      <SetUserInfo style={styles.contain} />
+      {/* <SetUserInfo style={styles.contain} /> */}
     </View>
   );
 }
