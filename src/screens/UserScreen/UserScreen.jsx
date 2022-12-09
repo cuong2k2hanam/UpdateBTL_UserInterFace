@@ -7,11 +7,13 @@ import {
 } from "react-native";
 import React from "react";
 
-import Home from "./Page/Home";
+// import Home from "./Page/Home";
 // import Home from "./Page/HomeTest";
 // import Popup from "./Page/Modal";
 // import Report from "./Page/Report";
 // import Report from "./Page/SuggestFeature";
+import AuthorList from "./Author/AuthorList";
+
 import UserInfo from "./UserInfo/UserInfo";
 import SetUserInfo from "./SetUserInfo/SetUserInfo";
 
@@ -22,7 +24,7 @@ import { theme } from "../../theme";
 export default function UserScreen() {
   return (
     <View style={styles.container}>
-      {/* <SetUserInfo style={styles.contain} /> */}
+      <AuthorList />
     </View>
   );
 }

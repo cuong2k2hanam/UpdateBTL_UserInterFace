@@ -129,9 +129,10 @@ const styles = StyleSheet.create({
   },
   avatar: {
     flex: 4,
-    justifyContent: "space-between",
+    justifyContent: "space-evenly",
     alignItems: "center",
     marginBottom: 20,
+    marginTop: 20,
   },
 
   imageAvatar: {

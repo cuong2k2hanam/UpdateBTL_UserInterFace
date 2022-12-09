@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
+import { COLORS } from "../../../../constants";
 
 export default function ImageBook({ image, style }) {
   return (
@@ -26,5 +27,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingBottom: 20,
+    tintColor: COLORS.darkBlue,
   },
 });

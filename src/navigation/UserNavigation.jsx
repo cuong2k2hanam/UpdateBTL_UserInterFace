@@ -3,11 +3,13 @@ import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import { FontAwesome5 } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import CustomDrawer from "./custom/CustomDrawer";
 
 import UserInfo from "../screens/UserScreen/UserInfo/UserInfo";
 import SetUserInfo from "../screens/UserScreen/SetUserInfo/SetUserInfo";
+import AuthorNavigation from "./AuthorNavigation";
 
 import { COLORS, SIZES } from "../../constants";
 
@@ -17,6 +19,7 @@ export default function UserNavigation() {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawer {...props} />}
+      initialRouteName="AuthorNavigation"
       screenOptions={{
         headerShown: false,
         headerStyle: {
@@ -62,6 +65,22 @@ export default function UserNavigation() {
           headerTitleAlign: "center",
           drawerIcon: ({ color }) => (
             <FontAwesome5 name="user-edit" size={18} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="AuthorNavigation"
+        component={AuthorNavigation}
+        options={{
+          unmountOnBlur: true,
+          title: "Tác giả yêu thích",
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          headerTitleAlign: "center",
+          drawerIcon: ({ color }) => (
+            <MaterialIcons name="favorite" size={24} color={color} />
           ),
         }}
       />

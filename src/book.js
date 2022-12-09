@@ -257,4 +257,39 @@ const category = [
   },
 ];
 
-export { books, category };
+const authors = [
+  {
+    id: 0,
+    name: "Dale Carnegie",
+    avatar:
+      "https://raw.githubusercontent.com/neihyud/UI/C%C6%B0%E1%BB%9Dng/images/author.jpg",
+    story:
+      "Dale Carnegie là một tác giả có sách bán chạy nhất, người đã trở thành người tiên phong trong lĩnh vực cải thiện bản thân . Dale Carnagey sinh ngày 24 tháng 11 năm 1888 tại Maryville, Missouri, ông lớn lên trong trang trại của gia đình mình bên ngoài thị trấn. Anh ấy thích các sự kiện diễn thuyết trước công chúng và tham gia vào đội tranh luận của trường trung học.",
+  },
+  {
+    id: 1,
+    name: "Paulo Coelho",
+    avatar:
+      "https://raw.githubusercontent.com/neihyud/UI/C%C6%B0%E1%BB%9Dng/images/author-2.jpg",
+    story:
+      "Paulo Coelho de Souza là một nhà viết lời và viết tiểu thuyết người Brazil, đồng thời là thành viên của Học viện Văn học Brazil từ năm 2002. Cuốn tiểu thuyết Nhà giả kim của ông đã trở thành cuốn sách bán chạy nhất quốc tế và ông đã xuất bản thêm 28 cuốn sách kể từ đó.",
+  },
+  {
+    id: 2,
+    name: "Tô Hoài",
+    avatar:
+      "https://raw.githubusercontent.com/neihyud/UI/C%C6%B0%E1%BB%9Dng/images/author-3.jpg",
+    story:
+      "Tô Hoài là một trong những tên tuổi lớn của văn học hiện đại Việt Nam. Với 94 năm tuổi đời và hơn 70 năm tuổi nghề cùng số lượng tác phẩm đồ sộ, gần 200 đầu sách trải rộng trên nhiều mảng đề tài, có thể nói, Tô Hoài là nhà văn của nhiều thời, nhiều tầng lớp, nhiều độ tuổi khác nhau, một tác giả có tầm ảnh hưởng lớn đến nền văn học nghệ thuật nước nhà.",
+  },
+  {
+    id: 3,
+    name: "Mari Tamagawa",
+    avatar:
+      "https://github.com/neihyud/UI/blob/C%C6%B0%E1%BB%9Dng/images/author-4.jpg?raw=true",
+    story:
+      "Sang chấn tâm lý do tuổi thơ bất hạnh, do áp lực cuộc sống đè nặng…. khiến người bệnh ngẹt thở. Để tự điều trị cho chính mình, không có cách nào khác bạn phải đối mặt với nỗi đau và liếm láp vết thương. Những hướng dẫn từ chuyên gia tâm lý học lâm sàng Mari Tamagawa sẽ hữu ích dành cho bạn. Cô cũng là tác giả cuốn sách Mặc Kệ Thiên Hạ Sống Như Người Nhật nổi tiếng.",
+  },
+];
+
+export { books, category, authors };

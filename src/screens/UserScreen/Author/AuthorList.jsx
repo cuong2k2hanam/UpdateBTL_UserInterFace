@@ -1,32 +1,40 @@
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import React from "react";
-import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useDrawerStatus } from "@react-navigation/drawer";
 
 import { FontAwesome5 } from "@expo/vector-icons";
 
-// import Header from "../../../components/common/Header";
-// import SetAvatar from "./SetAvatar";
-import SetContent from "./SetContent";
-
 import { COLORS } from "../../../../constants";
-import { user } from "../../../data";
+import { authors } from "../../../book";
 
-const SetUserInfo = ({ route, navigation, style }) => {
+import AuthorItem from "./components/AuthorItem";
+
+export default function AuthorList({ navigation }) {
   return (
     <LinearGradient
       colors={COLORS.linerGradientPrimary}
       style={styles.container}
     >
-      {/* Header */}
-      {/* <Header
-        title={"Chỉnh sửa thông tin"}
-        navigation={navigation}
-        style={styles.header}
-      /> */}
-      {/* Content */}
-      <ScrollView style={styles.setContent}>
-        <SetContent user={user} style={{ flex: 1, height: "100%" }} />
+      <ScrollView contentContainerStyle={styles.scrollView}>
+        {authors.map((author, index) => {
+          return (
+            <TouchableOpacity
+              key={index}
+              onPress={() => {
+                navigation.navigate("AuthorScreen", { author: author });
+              }}
+            >
+              <AuthorItem author={author} />
+            </TouchableOpacity>
+          );
+        })}
       </ScrollView>
       <TouchableOpacity
         style={styles.togleDrawer}
@@ -38,22 +46,16 @@ const SetUserInfo = ({ route, navigation, style }) => {
       </TouchableOpacity>
     </LinearGradient>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // borderWidth: 2,
   },
-  header: {
-    // marginBottom: ,
-  },
-  setContent: {
-    flex: 1,
+  scrollView: {
     // borderWidth: 2,
-    // backgroundColor: "red",
-    // justifyContent: "flex-end",
-    // borderWidth: 10,
+    padding: 10,
+    marginTop: 10,
   },
   togleDrawer: {
     position: "absolute",
@@ -61,5 +63,3 @@ const styles = StyleSheet.create({
     top: 5,
   },
 });
-
-export default SetUserInfo;
