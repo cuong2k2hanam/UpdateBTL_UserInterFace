@@ -24,7 +24,8 @@ export default function BookAudio({ mybook, style, playAudio }) {
   // const user = context.user;
   // const nameAudio = context.nameAudio;
   // const setNewNameAudio = context.setNewNameAudio;
-  const playbackObj = context.playbackObj;
+  const { playbackObj } = context;
+  console.log(playbackObj);
   // const setNewPlayBackObj = context.setNewPlayBackObj;
   // const playbackStatus = context.playbackStatus;
   // const setNewPlayBackStatus = context.setNewPlayBackStatus;
@@ -70,8 +71,10 @@ export default function BookAudio({ mybook, style, playAudio }) {
   };
 
   useEffect(() => {
-    if (!playAudio) {
+    if (!playAudio && audio.name) {
       endAudio(audio, setAudio);
+      // context.setNewPlaying(true);
+      console.log("endAudio" + context.playing);
     }
   }, [playAudio]);
 

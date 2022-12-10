@@ -3,6 +3,7 @@ import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 
 import CustomDrawer from "./custom/CustomDrawer";
@@ -10,6 +11,7 @@ import CustomDrawer from "./custom/CustomDrawer";
 import UserInfo from "../screens/UserScreen/UserInfo/UserInfo";
 import SetUserInfo from "../screens/UserScreen/SetUserInfo/SetUserInfo";
 import AuthorNavigation from "./AuthorNavigation";
+import SuggestFeature from "../screens/UserScreen/Page/SuggestFeature";
 
 import { COLORS, SIZES } from "../../constants";
 
@@ -81,6 +83,22 @@ export default function UserNavigation() {
           headerTitleAlign: "center",
           drawerIcon: ({ color }) => (
             <MaterialIcons name="favorite" size={24} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="SuggestFeature"
+        component={SuggestFeature}
+        options={{
+          unmountOnBlur: true,
+          title: "Đóng góp",
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          headerTitleAlign: "center",
+          drawerIcon: ({ color }) => (
+            <FontAwesome name={"send-o"} size={24} color={color} />
           ),
         }}
       />

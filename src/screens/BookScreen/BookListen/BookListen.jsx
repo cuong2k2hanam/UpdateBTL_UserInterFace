@@ -1,11 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Header from "../../../components/common/Header";
 import BookAudio from "./BookAudio/BookAudio";
+import AppProvider from "../../../context/AppProvider";
 
 import { theme } from "../../../theme";
 
 export default function BookListen({ route, navigation }) {
+  const context = useContext(AppProvider);
+
   const { mybook } = route.params;
   const [playAudio, setPlayAudio] = useState(true);
   // console.log(mybook);
@@ -14,6 +17,8 @@ export default function BookListen({ route, navigation }) {
   }, [playAudio]);
   return (
     <View style={styles.container}>
+      {console.log("Đây là trang listen")}
+      {console.log(context)}
       <Header
         title={"Audio"}
         style={styles.header}

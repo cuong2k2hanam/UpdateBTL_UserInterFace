@@ -23,6 +23,7 @@ const ImageAPI = ({ listBook }) => {
         if (index < 12) {
           return (
             <TouchableOpacity
+              key={index}
               style={styles.bookItem}
               onPress={() => {
                 navigation.navigate("BookNavigation", {

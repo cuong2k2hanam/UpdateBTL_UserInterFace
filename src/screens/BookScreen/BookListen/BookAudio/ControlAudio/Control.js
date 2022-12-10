@@ -12,7 +12,7 @@ export async function selectAudio(nameAudio, audio, setAudio, source) {
       shouldPlay: true,
       progressUpdateIntervalMillis: 1000,
     });
-    // console.log(status)
+    // await console.log(status);
     console.log("Playing Sound");
 
     return setAudio({

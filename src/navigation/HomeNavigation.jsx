@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
@@ -9,11 +9,16 @@ import BookNavigation from "./BookNavigation";
 import UserScreen from "../screens/UserScreen/UserScreen";
 import UserNavigation from "./UserNavigation";
 
+// import { AppContext } from "../context/AppProvider";
+
 import { theme } from "../theme";
 
 const Tab = createMaterialBottomTabNavigator();
 
 export default function HomeNavigation() {
+  // const context = useContext(AppContext);
+  // console.log("HomeNavigation");
+  // console.log(context);
   return (
     <Tab.Navigator
       initialRouteName="HomeScreen"

@@ -10,15 +10,15 @@ const AppProvider = (props) => {
   const [user, setUser] = useState("Dinh Cuong");
   const [playbackObj, setPlayBackObj] = useState(new Audio.Sound());
   const [playbackStatus, setPlaybackStatus] = useState(null);
-  const [nameAudio, setNameAudio] = useState("");
+  const [bookName, setBookName] = useState("Cuong");
   const [playing, setPlaying] = useState(false);
 
   async function setNewPlayBackObj(playbackObj) {
     return setPlayBackObj(playbackObj);
   }
 
-  async function setNewNameAudio(nameAudio) {
-    return setNameAudio(nameAudio);
+  async function setNewBookName(bookName) {
+    return setBookName(bookName);
   }
 
   async function setNewPlaying(playing) {
@@ -31,17 +31,18 @@ const AppProvider = (props) => {
 
   return (
     // playbackObj.setPositionAsync()
+
     <AppContext.Provider
       value={{
         user: user,
         playbackObj: playbackObj,
         playbackStatus: playbackStatus,
-        nameAudio: nameAudio,
+        bookName: bookName,
         playing: playing,
-        setNewNameAudio: setNewNameAudio,
+        setBookName: setNewBookName,
         setNewPlayBackObj: setNewPlayBackObj,
         setNewPlayBackStatus: setNewPlayBackStatus,
-        setNewPlaying: setNewPlaying,
+        setPlaying: setNewPlaying,
       }}
     >
       {props.children}

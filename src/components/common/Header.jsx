@@ -1,12 +1,15 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { useRoute } from "@react-navigation/native";
 import { theme } from "../../theme";
 // import { useNavigation } from "@react-navigation/native";
 
 import { Ionicons } from "@expo/vector-icons";
 
+import AppProvider from "../../context/AppProvider";
+
 export default function Header({ navigation, title, style, setPlayAudio }) {
+  const context = useContext(AppProvider);
   const route = useRoute();
   // const usenavigation = useNavigation();
 
@@ -17,6 +20,8 @@ export default function Header({ navigation, title, style, setPlayAudio }) {
         onPress={() => {
           if (setPlayAudio) {
             setPlayAudio(false);
+            // context.setNewPlaying(false);
+            // console.log("check playing context" + context.playing);
           }
           navigation.goBack();
           console.log(route.name);

@@ -1,4 +1,5 @@
 import { StatusBar, StyleSheet, SafeAreaView, View, Text } from "react-native";
+import React, { useContext } from "react";
 import AppProvider from "./src/context/AppProvider";
 import { theme } from "./src/theme.js";
 import { NavigationContainer } from "@react-navigation/native";

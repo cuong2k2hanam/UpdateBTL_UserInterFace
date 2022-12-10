@@ -1,6 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
-import React from "react";
+import React, { useContext, useEffect } from "react";
+
 import { theme } from "../../../theme";
+import { COLORS } from "../../../../constants";
+
+import { AppContext } from "../../../context/AppProvider";
 
 import Header from "../../../components/common/Header";
 import ImageBook from "./ImageBook";
@@ -8,12 +12,33 @@ import ContentBook from "./ContentBook";
 import ChatBubble from "./ChatBubble";
 
 export default function BookInfo({ route, navigation }) {
-  let imageBook = {
-    uri: "https://raw.githubusercontent.com/neihyud/UI/C%C6%B0%E1%BB%9Dng/images/fortress-blood.jpg",
-  };
+  const context = useContext(AppContext);
+  const { setBookName, setPlaying, playbackObj } = context;
+  console.log("BookInfo");
+  console.log("playbackObj " + playbackObj._loaded);
+  console.log(context);
 
   let { mybook } = route.params;
   console.log(mybook);
+
+  async function resetMyBook(bookName) {
+    if (context.bookName !== mybook.bookName) {
+      console.log("reset Book");
+      console.log(setBookName);
+      // console.log(context.setNewBookName);
+      setBookName(mybook.bookName);
+      // await context.setNewBookName(bookName);
+      setPlaying(false);
+    }
+    if (playbackObj._loaded) {
+      await playbackObj.stopAsync();
+      await playbackObj.unloadAsync();
+    }
+  }
+
+  useEffect(() => {
+    resetMyBook(mybook.bookName);
+  }, [mybook.bookName]);
 
   return (
     <View style={styles.container}>
@@ -22,7 +47,11 @@ export default function BookInfo({ route, navigation }) {
         style={styles.header}
         navigation={navigation}
       />
-      <ImageBook image={mybook.bookCover.uri} style={styles.imageBook} />
+      <ImageBook
+        image={mybook.bookCover.uri}
+        style={styles.imageBook}
+        book={mybook}
+      />
       <ContentBook
         style={styles.containBook}
         mybook={mybook}
@@ -42,7 +71,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // borderWidth: 2,
     height: "100%",
-    backgroundColor: theme.colors.primary,
+    backgroundColor: COLORS.transparent,
   },
   header: {
     // borderWidth: 2,

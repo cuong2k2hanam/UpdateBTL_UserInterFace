@@ -1,5 +1,5 @@
 import { View, Text } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { TabActions } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -10,10 +10,15 @@ import BookListen from "../screens/BookScreen/BookListen/BookListen";
 import BookView from "../screens/BookScreen/BookView/BookView";
 import BookDetail from "../screens/Bach/BookDetail";
 
+// import { AppContext } from "../context/AppProvider";
+
 const Stack = createStackNavigator();
 
 export default function BookNavigation({ route, navigaton }) {
   console.log(route.params);
+  // const context = useContext(AppContext);
+  // console.log("BookNavigation");
+  // console.log(context);
 
   return (
     <Stack.Navigator
