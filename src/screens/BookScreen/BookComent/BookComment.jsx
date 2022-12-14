@@ -5,7 +5,8 @@ import Header from "../../../components/common/Header";
 import { theme } from "../../../theme";
 import CommentContent from "./CommentContent";
 
-const BookComment = ({ navigation }) => {
+const BookComment = ({ route, navigation }) => {
+  const { book } = route.params;
   return (
     <View style={styles.container}>
       <Header
@@ -13,7 +14,7 @@ const BookComment = ({ navigation }) => {
         style={styles.header}
         navigation={navigation}
       />
-      <CommentContent style={styles.commentContent} />
+      <CommentContent style={styles.commentContent} book={book} />
     </View>
   );
 };

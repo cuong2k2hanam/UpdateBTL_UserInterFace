@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useDrawerStatus } from "@react-navigation/drawer";
+
+import { getUserInfo, readUserInfo } from "../../../firebase/UserInfo";
 
 import { FontAwesome5 } from "@expo/vector-icons";
 
@@ -9,9 +11,20 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import UserInfoContend from "./UserInfoContend";
 
 import { COLORS } from "../../../../constants";
-import { user } from "../../../data";
+import { user as userDefault } from "../../../data";
 
 const UserInfo = ({ route, navigation }) => {
+  // const [user, setUser] = useState(userDefault);
+  const { email, user } = route.params;
+  // console.log("UserInfo: " + email);
+
+  // useEffect(() => {
+  //   readUserInfo(email);
+  //   getUserInfo(email, setUser);
+  // }, []);
+  // console.log("User: " + user);
+
+  // setUser(user);
   console.log(useDrawerStatus());
   return (
     <LinearGradient

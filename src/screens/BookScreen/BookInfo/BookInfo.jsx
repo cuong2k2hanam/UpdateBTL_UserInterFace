@@ -38,7 +38,7 @@ export default function BookInfo({ route, navigation }) {
 
   useEffect(() => {
     resetMyBook(mybook.bookName);
-  }, [mybook.bookName]);
+  }, [mybook?.bookName]);
 
   return (
     <View style={styles.container}>
@@ -48,7 +48,7 @@ export default function BookInfo({ route, navigation }) {
         navigation={navigation}
       />
       <ImageBook
-        image={mybook.bookCover.uri}
+        image={mybook?.bookCover.uri}
         style={styles.imageBook}
         book={mybook}
       />
@@ -60,7 +60,7 @@ export default function BookInfo({ route, navigation }) {
       <ChatBubble
         style={styles.chatBubble}
         navigation={navigation}
-        onPress={() => navigation.navigate("BookComment")}
+        onPress={() => navigation.navigate("BookComment", { book: mybook })}
       />
     </View>
   );

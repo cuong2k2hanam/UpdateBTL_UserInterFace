@@ -8,7 +8,7 @@ export default function UserInfomation({ user, style }) {
   //   id: 0,
   //   avatar:
   //     "https://raw.githubusercontent.com/neihyud/UI/C%C6%B0%E1%BB%9Dng/images/user-avatar.jpg",
-  //   firsName: "Trần Đình",
+  //   firstName: "Trần Đình",
   //   lastName: "Cường",
   //   phone: "0862964913",
   //   email: "cuong@gmail.com",

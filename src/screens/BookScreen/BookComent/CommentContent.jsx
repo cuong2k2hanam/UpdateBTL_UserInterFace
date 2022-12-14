@@ -1,16 +1,33 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { theme } from "../../../theme";
 
 import CommentLists from "./CommentLists";
 import CommentBar from "./CommentBar";
 
-export default function CommentContent(style) {
+import { getComments } from "../../../firebase/CommentControl";
+
+export default function CommentContent({ style, book }) {
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    getComments(setComments, book);
+    console.log(...comments);
+  }, []);
+
   return (
     <View style={[styles.container, style]}>
       <View style={styles.comments}>
-        <CommentLists style={styles.commentLists} />
-        <CommentBar style={styles.commentBar} />
+        <CommentLists
+          style={styles.commentLists}
+          book={book}
+          comments={comments}
+        />
+        <CommentBar
+          style={styles.commentBar}
+          book={book}
+          setComments={setComments}
+        />
       </View>
     </View>
   );

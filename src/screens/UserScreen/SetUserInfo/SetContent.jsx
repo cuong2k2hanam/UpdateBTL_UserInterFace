@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   Button,
   Image,
@@ -10,17 +10,101 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import PhoneInput, { isValidNumber } from "react-native-phone-number-input";
 import * as ImagePicker from "expo-image-picker";
 import { COLORS } from "../../../../constants";
 import { theme } from "../../../theme.js";
+import { UserContext } from "../../../navigation/HomeNavigation";
+
+import { writeUserInfo } from "../../../firebase/UserInfo";
 
 export default function SetContent({ style, user }) {
+  const navigation = useNavigation();
+  const context = useContext(UserContext);
+  const { setUser, change, setChange } = context;
+  console.log("Hi " + change);
+  // const [user, setUser] = useState(userDefault);
   const [image, setImage] = useState(user.avatar);
   const [firstName, setFisrtName] = useState(user.firstName);
   const [lastName, setLastName] = useState(user.lastName);
   const [phone, setPhone] = useState(user.phone);
   const [email, setEmail] = useState(user.email);
+  const [alert, setAleart] = useState({
+    validation: false,
+    error: false,
+    success: false,
+    message: false,
+  });
+
+  async function handleUpdate() {
+    if (firstName.length === 0) {
+      return setAleart({
+        validation: true,
+        error: true,
+        success: false,
+        message: "Họ không được để trống",
+      });
+    } else if (firstName.length > 50) {
+      return setAleart({
+        validation: true,
+        error: true,
+        success: false,
+        message: "Họ không được dài hơn 50 ký tự",
+      });
+    } else if (lastName.length === 0) {
+      return setAleart({
+        validation: true,
+        error: true,
+        success: false,
+        message: "Tên không được để trống",
+      });
+    } else if (lastName.length > 50) {
+      return setAleart({
+        validation: true,
+        error: true,
+        success: false,
+        message: "Tên không được dài hơn 50 ký tự",
+      });
+    } else if (phone.length === 0) {
+      return setAleart({
+        validation: true,
+        error: true,
+        success: false,
+        message: "Số điện thoại không được để trống",
+      });
+    } else {
+      let vnf_regex = /((09|03|07|08|05)+([0-9]{8}))/g;
+      if (!vnf_regex.test(phone)) {
+        return setAleart({
+          validation: true,
+          error: true,
+          success: false,
+          message: "Số điện thoại không hợp lệ",
+        });
+      }
+    }
+
+    setChange(true);
+    // alert("Chỉnh sửa thông tin thành công");
+    setAleart({
+      validation: true,
+      error: false,
+      success: true,
+      message: "Thay đổi thông tin thành công",
+    });
+
+    setUser({
+      ...user,
+      email: email,
+      phone: phone,
+      firstName: firstName,
+      lastName: lastName,
+      avatar: image,
+    });
+    navigation.navigate("UserInfo");
+    return writeUserInfo(email, user);
+  }
 
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
@@ -38,6 +122,7 @@ export default function SetContent({ style, user }) {
 
   return (
     <KeyboardAvoidingView style={[styles.container, style]}>
+      {console.log(user)}
       <View style={styles.avatar}>
         {image && (
           <Image
@@ -54,13 +139,26 @@ export default function SetContent({ style, user }) {
         </TouchableOpacity>
       </View>
       <View style={styles.infor}>
+        {alert.validation && (
+          <Text style={alert.success ? { color: "green" } : { color: "red" }}>
+            {alert.message}
+          </Text>
+        )}
         <View style={styles.inforItem}>
           <Text style={styles.titleItem}>Họ</Text>
           <TextInput
             style={styles.content}
             // autoCapitalize="words"
             value={firstName}
-            onChange={setFisrtName}
+            // onChange={(e) => {
+            //   console.log(firstName);
+            //   setFisrtName(e.target.value);
+            // }}
+            onChangeText={(text) => {
+              {
+                setFisrtName(text);
+              }
+            }}
           />
         </View>
         <View style={styles.inforItem}>
@@ -69,7 +167,7 @@ export default function SetContent({ style, user }) {
             style={styles.content}
             autoCapitalize="words"
             value={lastName}
-            onChange={setLastName}
+            onChangeText={(text) => setLastName(text)}
           />
         </View>
 
@@ -77,9 +175,10 @@ export default function SetContent({ style, user }) {
           <Text style={styles.titleItem}>Email</Text>
           <TextInput
             style={styles.content}
+            readOnly
             keyboardType="email-address"
             value={email}
-            onChange={setEmail}
+            // onChange={setEmail}
           />
         </View>
         <View style={styles.inforItem}>
@@ -95,13 +194,15 @@ export default function SetContent({ style, user }) {
             style={styles.content}
             keyboardType="phone-pad"
             value={phone}
-            onChange={setEmail}
+            onChangeText={(text) => setPhone(text)}
           />
         </View>
       </View>
       <TouchableOpacity
         title="Chỉnh sửa"
-        onPress={() => {}}
+        onPress={() => {
+          handleUpdate();
+        }}
         style={styles.submit}
       >
         <Text

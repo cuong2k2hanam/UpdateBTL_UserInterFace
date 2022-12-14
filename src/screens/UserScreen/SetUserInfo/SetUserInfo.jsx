@@ -1,29 +1,29 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useDrawerStatus } from "@react-navigation/drawer";
 
 import { FontAwesome5 } from "@expo/vector-icons";
 
+import { UserContext } from "../../../navigation/HomeNavigation";
 // import Header from "../../../components/common/Header";
 // import SetAvatar from "./SetAvatar";
 import SetContent from "./SetContent";
 
 import { COLORS } from "../../../../constants";
-import { user } from "../../../data";
+// import { user } from "../../../data";
 
 const SetUserInfo = ({ route, navigation, style }) => {
+  const context = useContext(UserContext);
+  const { user } = context;
+  const { email } = route.params;
+
   return (
     <LinearGradient
       colors={COLORS.linerGradientPrimary}
       style={styles.container}
     >
       {/* Header */}
-      {/* <Header
-        title={"Chỉnh sửa thông tin"}
-        navigation={navigation}
-        style={styles.header}
-      /> */}
       {/* Content */}
       <ScrollView style={styles.setContent}>
         <SetContent user={user} style={{ flex: 1, height: "100%" }} />

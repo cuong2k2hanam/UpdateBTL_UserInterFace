@@ -34,7 +34,7 @@ const AppProvider = (props) => {
 
     <AppContext.Provider
       value={{
-        user: user,
+        // user: user,
         playbackObj: playbackObj,
         playbackStatus: playbackStatus,
         bookName: bookName,

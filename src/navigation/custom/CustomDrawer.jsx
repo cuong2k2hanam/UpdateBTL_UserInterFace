@@ -6,20 +6,24 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import {
   DrawerContentScrollView,
   DrawerItemList,
 } from "@react-navigation/drawer";
 
-import { user } from "../../data";
+import { UserContext } from "../HomeNavigation";
+
+// import { user } from "../../data";
 import { COLORS, SIZES } from "../../../constants";
 
 import { Ionicons } from "@expo/vector-icons";
 
 export default function CustomDrawer(props) {
   const navigation = useNavigation();
+  const context = useContext(UserContext);
+  const { user } = context;
   return (
     <View style={{ flex: 1 }}>
       <DrawerContentScrollView

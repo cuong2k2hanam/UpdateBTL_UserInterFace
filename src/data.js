@@ -1,12 +1,11 @@
 const user = {
-  id: 0,
   avatar:
     "https://raw.githubusercontent.com/neihyud/UI/C%C6%B0%E1%BB%9Dng/images/user-avatar.jpg",
-  firstName: "Nguyễn",
-  lastName: "Xuân Bách",
-  phone: "0862964913",
-  email: "cuong@gmail.com",
-  pass: "123456789",
+  firstName: "",
+  lastName: "",
+  phone: "",
+  email: "",
+  pass: "",
 };
 
 const book = {

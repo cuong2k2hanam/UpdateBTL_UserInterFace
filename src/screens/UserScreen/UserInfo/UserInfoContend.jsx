@@ -1,12 +1,15 @@
 import { View, Text, StyleSheet } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 
 import UserAvatar from "./UserAvatar";
 import UserInfomation from "./UserInfomation";
 
 import { COLORS } from "../../../../constants";
+import { UserContext } from "../../../navigation/HomeNavigation";
 
-export default function UserInfoContend({ user, style }) {
+export default function UserInfoContend({ style }) {
+  const context = useContext(UserContext);
+  const { user } = context;
   return (
     <View style={[styles.container, style]}>
       <UserAvatar style={styles.userAvatar} image={user.avatar} />

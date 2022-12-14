@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
+
+import { getUserInfo } from "../firebase/UserInfo";
 
 import { FontAwesome5 } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
@@ -17,7 +19,10 @@ import { COLORS, SIZES } from "../../constants";
 
 const Drawer = createDrawerNavigator();
 
-export default function UserNavigation() {
+export default function UserNavigation({ route, navigation }) {
+  const { email } = route.params;
+  console.log("User: " + email);
+
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomDrawer {...props} />}
@@ -40,6 +45,7 @@ export default function UserNavigation() {
     >
       <Drawer.Screen
         name="UserInfo"
+        initialParams={{ email: email }}
         component={UserInfo}
         options={{
           unmountOnBlur: true,
@@ -56,6 +62,7 @@ export default function UserNavigation() {
       />
       <Drawer.Screen
         name="SetUserInfo"
+        initialParams={{ email: email }}
         component={SetUserInfo}
         options={{
           unmountOnBlur: true,

@@ -22,7 +22,7 @@ export default function BookNavigation({ route, navigaton }) {
 
   return (
     <Stack.Navigator
-      initialRouteName={route.params ? "BookInfo" : "BookEmpty"}
+      initialRouteName={route.params.mybook ? "BookInfo" : "BookEmpty"}
       screenOptions={{ headerShown: false }}
       // initialParams={{ myroute: route }}
     >
